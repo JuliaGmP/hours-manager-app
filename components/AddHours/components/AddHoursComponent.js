@@ -208,16 +208,6 @@ const AddHoursComponent = (props) => {
                 </TouchableOpacity>
             </View>
                 }
-            <View style={{flexDirection:"row", alignItems:"center"}}>
-                <Switch
-                  trackColor={{ false: "#E4E4E4", true: "#90EE90" }}
-                  thumbColor="#f4f3f4"
-                  ios_backgroundColor="#E4E4E4"
-                  onValueChange={toggleSwitch}
-                  value={isHoursRangeEnabled}
-                />
-                <Text style={[styles.text, {marginLeft:10}]}>Hora Inicio/Fin</Text>
-            </View>
             <View style={{flexDirection:"row", width:"100%", justifyContent:"flex-end"}}>
                 {/*<View style={{minWidth:"30%"}}>
                     <Button text="AÑADIR MÁS" onClick={() => {}}/>

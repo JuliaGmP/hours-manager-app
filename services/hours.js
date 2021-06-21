@@ -5,7 +5,6 @@ import moment from 'moment';
 export async function getHoursInAWeek(token, date, userId) {
     const day = new Date(date)
     let response = await customFetch(endpoints.hours_getWeekHours + "/" + day + "/" + userId, "GET", null, null, token);
-    console.log(response)
     return response;
 }
 
@@ -18,9 +17,7 @@ export async function addHours(userId,date,number_hours,idProject, token) {
         "number_hours": Math.round((number_hours + Number.EPSILON) * 100) / 100 ,
         "idProject": idProject === null ? "" : idProject,
       }
-      console.log(data)
     let response = await customFetch(endpoints.hours_addHours, "POST", data, null, token);
-    console.log(response)
 
     return response;
 }

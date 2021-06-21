@@ -16,7 +16,8 @@ const ProjectsDetail = (props) => {
     const getProjectsNames = async () =>{
         const dayCopy = props.navigation.state.params.day
         for(const item of dayCopy) {
-            item.projectName= (await getProject(item.idProject)).name
+            console.log(await getProject(item.idProject, props.user.token))
+            item.projectName= (await getProject(item.idProject, props.user.token)).name
         }
         setDay(dayCopy)
     }

@@ -18,11 +18,10 @@ const LoginContainer = (props) => {
         setLoading(true);
         try {
             let token;
-            await login(email, password).then((response) => {
-                if (response === undefined) throw new Error("Error en el login");
-                if (response.error !== undefined) throw new Error(JSON.stringify(response.error));
-                token = response.token;
-            });
+            const response = await login(email, password)
+            if (response === undefined) throw new Error("Error en el login");
+            if (response.error !== undefined) throw new Error(JSON.stringify(response.error));
+            token = response.token;
             await AsyncStorage.setItem("token", token);
 
             const userProfile = await getUserProfile(token);
